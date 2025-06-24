@@ -98,4 +98,19 @@ document.addEventListener('DOMContentLoaded', function () {
             slideTimer = setInterval(showNextSlide, slideInterval);
         });
     }
+
+    // Read More / Read Less toggle functionality for statements
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const textContent = button.previousElementSibling;
+            if (textContent.classList.contains('expanded')) {
+                textContent.classList.remove('expanded');
+                button.textContent = 'READ MORE';
+            } else {
+                textContent.classList.add('expanded');
+                button.textContent = 'READ LESS';
+            }
+        });
+    });
 });
