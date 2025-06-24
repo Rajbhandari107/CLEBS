@@ -584,13 +584,56 @@ body {
     object-fit: cover;
 }
 
+/* Updated styles for Chairman and Principal Statements section */
+.statements-section {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.statement {
+    flex: 1;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.text-content.expanded {
+    max-height: 1000px; /* large enough to show full content */
+}
+
+.read-more-btn {
+    background-color: #90caf9;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    color: #1a237e;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.read-more-btn:hover {
+    background-color: #64b5f6;
+}
+
 @media (max-width: 768px) {
-    .gallery-row {
+    .statements-section {
         flex-direction: column;
     }
 
-    .gallery-row img {
-        width: 100%;
-        margin-bottom: 1rem;
+    .statement {
+        max-width: 100%;
+        margin-bottom: 2rem;
     }
 }
